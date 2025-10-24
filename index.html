@@ -18,8 +18,8 @@
       <img src="images/logos/Logo.png" alt="Wellins Inc. logo" />
     </a>
     <nav class="nav" aria-label="Main navigation">
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      <ul class="nav__list">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+      <ul class="nav__list" id="primary-navigation">
         <li><a href="#about-company">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#certifications">Certifications</a></li>
@@ -32,19 +32,45 @@
 </header>
 
 <main>
- <section class="hero" id="hero">
+<section class="hero" id="hero">
   <div class="hero-overlay">
-    <div class="container hero-inner">
+    <div class="container hero-inner" data-animate>
       <div class="hero-content">
+        <p class="hero-kicker">Trusted industrial partner since 2016</p>
         <h1>Industrial System Expert</h1>
         <p>High-pressure piping • Fire protection • HVAC • Fabrication • Equipment install</p>
-        <a class="btn btn-primary" href="#contact">Get a Quote</a>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Get a Quote</a>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="about-company" class="section about-company">
+<section class="section key-stats bg-light" aria-label="Company impact highlights">
+  <div class="container stats-grid" data-animate>
+    <div class="stat">
+      <span class="stat-number" data-counter="2016">2016</span>
+      <span class="stat-label">Founded</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-counter="12">12</span>
+      <span class="stat-label">States Licensed</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-counter="4.3">4.3</span>
+      <span class="stat-suffix">acres</span>
+      <span class="stat-label">Buford Facility</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-counter="150" data-suffix="+">150+</span>
+      <span class="stat-label">Major Installations</span>
+    </div>
+  </div>
+</section>
+
+<section id="about-company" class="section about-company" data-animate>
   <div class="container about-grid">
     
     <div class="about-content">
@@ -73,7 +99,7 @@
 
 
 
-<section id="company-history" class="section company-history">
+<section id="company-history" class="section company-history" data-animate>
   <div class="container history-grid">
     <div class="history-image">
       <img src="images/buford-facility.png" alt="Manufacturing Facility">
@@ -108,7 +134,7 @@
 </section>
 
 
-<section id="org-chart" class="section org-modern">
+<section id="org-chart" class="section org-modern" data-animate>
   <div class="container">
     <h2>Organization Chart</h2>
     <div class="org-tree">
@@ -145,7 +171,7 @@
 </section>
 
 
-  <section id="services" class="section bg-light">
+  <section id="services" class="section bg-light" data-animate>
     <div class="container">
       <h2>Our Services</h2>
       <div class="services-grid">
@@ -159,7 +185,7 @@
     </div>
   </section>
 
-  <section id="certifications" class="section">
+  <section id="certifications" class="section" data-animate>
     <div class="container">
       <h2>Certifications & Licenses</h2>
       <ul class="capabilities-list">
@@ -171,10 +197,10 @@
     </div>
   </section>
 
-  <section id="projects" class="section bg-light">
+  <section id="projects" class="section bg-light" data-animate>
     <div class="container">
       <h2>Project Milestones</h2>
-      <div class="timeline">
+      <div class="timeline project-timeline">
         <div class="timeline-item"><div class="timeline-year">2024</div>
           <ul>
             <li>LGES-Honda JV (OH): Process & hot oil piping</li>
@@ -211,7 +237,7 @@
     </div>
   </section>
 
-<section id="clients" class="section">
+<section id="clients" class="section" data-animate>
   <div class="container">
     <h2>Trusted By</h2>
     <div class="clients-logos">
@@ -235,7 +261,7 @@
   </div>
 </section>
 
- <section id="contact" class="section bg-light">
+ <section id="contact" class="section bg-light" data-animate>
   <div class="container">
     <h2>Contact Us</h2>
     <ul class="contact-details">
@@ -264,11 +290,15 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" data-animate>
   <div class="container">
     <p>© 2025 Wellins Inc. — Beyond the Best</p>
   </div>
 </footer>
+
+<button class="scroll-top" type="button" aria-label="Scroll to top">
+  ↑
+</button>
 
 <script src="js/main.js"></script>
 </body>
