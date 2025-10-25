@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const animatedElements = document.querySelectorAll('[data-animate]');
   const counters = document.querySelectorAll('[data-counter]');
+  const progressBars = document.querySelectorAll('.progress-bar');
   const scrollTopButton = document.querySelector('.scroll-top');
   const hasIntersectionObserver = 'IntersectionObserver' in window;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -50,6 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
     element.dataset.animated = 'true';
   };
 
+  const activateProgress = (bar) => {
+    const target = parseFloat(bar.dataset.progress ?? '0');
+    const clamped = Number.isFinite(target) ? Math.min(Math.max(target, 0), 100) : 0;
+    bar.style.width = `${clamped}%`;
+  };
+
   if (prefersReducedMotion) {
     animatedElements.forEach(el => el.classList.add('is-visible'));
     counters.forEach(counter => {
@@ -57,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         counter.textContent = counter.dataset.counter + (counter.dataset.suffix ?? '');
       }
     });
+    progressBars.forEach(activateProgress);
   } else if (hasIntersectionObserver) {
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
@@ -82,6 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.6, rootMargin: '0px 0px -40px 0px' });
 
     counters.forEach(counter => counterObserver.observe(counter));
+
+    if (progressBars.length) {
+      const progressObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            activateProgress(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      progressBars.forEach(bar => progressObserver.observe(bar));
+    }
   } else {
     animatedElements.forEach(el => el.classList.add('is-visible'));
     counters.forEach(counter => {
@@ -89,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         counter.textContent = counter.dataset.counter + (counter.dataset.suffix ?? '');
       }
     });
+    progressBars.forEach(activateProgress);
   }
 
   if (scrollTopButton) {
