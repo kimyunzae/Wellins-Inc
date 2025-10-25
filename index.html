@@ -101,35 +101,58 @@
 
 
 <section id="company-history" class="section company-history" data-animate>
-  <div class="container history-grid">
-    <div class="history-image">
-      <img src="images/buford-facility.png" alt="Manufacturing Facility">
-      <p class="history-caption">
-        <span class="red"><strong>We</strong></span> are excited to announce our new 4.3-acre manufacturing facility in Buford, GA — expected completion in 2025.
-      </p>
+  <div class="container">
+    <div class="history-header">
+      <p class="section-kicker">Roadmap of Progress</p>
+      <h2>Company History</h2>
+      <p class="section-subtitle">Milestones that illustrate how our capabilities, footprint, and partnerships have expanded since day one.</p>
     </div>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="dot"></span>
-        <p><span class="year">2016</span> <strong class="blue">WELLINS INC</strong> Established</p>
-      </div>
-      <div class="timeline-item">
-        <span class="dot"></span>
-        <p><span class="year">2019</span> General Contract Licensed (GA / TN / SC)</p>
-      </div>
-      <div class="timeline-item">
-        <span class="dot"></span>
-        <p><span class="year">2023</span> HQ Relocation (Duluth, GA)</p>
-      </div>
-      <div class="timeline-item">
-        <span class="dot"></span>
-        <p><span class="year">2024</span> <span class="red">Fire Protection Licensed</span> (GA / TN / LA / AL / TX)</p>
-      </div>
-      <div class="timeline-item">
-        <span class="dot"></span>
-        <p><span class="year">2025</span> <strong>Business Expansion</strong>: New Manufacturing Facility (Buford, GA)</p>
-      </div>
+    <div class="history-grid">
+      <figure class="history-image">
+        <img src="images/buford-facility.png" alt="Manufacturing Facility">
+        <figcaption class="history-caption">
+          <span class="red"><strong>We</strong></span> are excited to announce our new 4.3-acre manufacturing facility in Buford, GA — expected completion in 2025.
+        </figcaption>
+      </figure>
+
+      <ol class="timeline" role="list">
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-year">2016</span>
+            <h3 class="timeline-title"><strong class="blue">WELLINS INC</strong> Established</h3>
+            <p>We launched in Georgia with a mandate to deliver reliable mechanical and industrial systems.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-year">2019</span>
+            <h3 class="timeline-title">General Contract Licenses Secured</h3>
+            <p>Expanded operations across GA, TN, and SC with multi-state contractor credentials.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-year">2023</span>
+            <h3 class="timeline-title">HQ Relocation</h3>
+            <p>Relocated headquarters to Duluth, GA to support growing teams and fabrication resources.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-year">2024</span>
+            <h3 class="timeline-title"><span class="red">Fire Protection</span> Licensing</h3>
+            <p>Earned licenses across GA, TN, LA, AL, and TX to deploy turnkey fire protection programs.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-year">2025</span>
+            <h3 class="timeline-title">Manufacturing Expansion</h3>
+            <p>Opening a new Buford facility to centralize fabrication, logistics, and rapid deployment teams.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
@@ -139,32 +162,46 @@
   <div class="container">
     <h2>Organization Chart</h2>
     <div class="org-tree">
-      <div class="org-node ceo">CEO</div>
-      <div class="org-level">
+      <div class="org-level org-level--root">
+        <div class="org-node ceo">CEO</div>
+      </div>
+      <div class="org-level org-level--departments">
         <div class="org-node">Management Support</div>
         <div class="org-node red">New Business Sales</div>
         <div class="org-node green">Installation</div>
         <div class="org-node purple">Fabrication</div>
       </div>
-      <div class="org-branches">
-        <div class="org-branch">
-          <div class="org-node">Fire Fighting Team</div>
-          <div class="org-node">Install Support</div>
-          <div class="org-node">Maintenance</div>
+      <div class="org-lattice">
+        <div class="org-column">
+          <h3 class="org-column-title">Operations</h3>
+          <div class="org-branch">
+            <div class="org-node">Fire Fighting Team</div>
+            <div class="org-node">Install Support</div>
+            <div class="org-node">Maintenance</div>
+          </div>
         </div>
-        <div class="org-branch">
-          <div class="org-node">New Business Team</div>
-          <div class="org-node">Sales Manager</div>
-          <div class="org-node">Quotation Manager</div>
+        <div class="org-column">
+          <h3 class="org-column-title">Business Development</h3>
+          <div class="org-branch">
+            <div class="org-node">New Business Team</div>
+            <div class="org-node">Sales Manager</div>
+            <div class="org-node">Quotation Manager</div>
+          </div>
         </div>
-        <div class="org-branch">
-          <div class="org-node">Installation Div A</div>
-          <div class="org-node">Installation Div B</div>
+        <div class="org-column">
+          <h3 class="org-column-title">Installation Divisions</h3>
+          <div class="org-branch">
+            <div class="org-node">Installation Div A</div>
+            <div class="org-node">Installation Div B</div>
+          </div>
         </div>
-        <div class="org-branch">
-          <div class="org-node">Fabrication Team</div>
-          <div class="org-node">Fire Pipe Team</div>
-          <div class="org-node">Spool Team</div>
+        <div class="org-column">
+          <h3 class="org-column-title">Fabrication Groups</h3>
+          <div class="org-branch">
+            <div class="org-node">Fabrication Team</div>
+            <div class="org-node">Fire Pipe Team</div>
+            <div class="org-node">Spool Team</div>
+          </div>
         </div>
       </div>
     </div>
@@ -185,7 +222,12 @@
             <img src="images/projects/Untitled%20(1).png" alt="Equipment installation placeholder" loading="lazy">
           </figure>
           <div class="service-body">
-            <div class="card-icon" aria-hidden="true">⚙️</div>
+            <svg class="service-icon" viewBox="0 0 48 48" role="img" aria-label="Equipment Installation icon">
+              <path d="M9 35h30" class="icon-line" />
+              <path d="M12 31h6l5-12 7 18 3-8h5" class="icon-line" />
+              <circle cx="16" cy="38" r="4" class="icon-accent" />
+              <circle cx="34" cy="38" r="4" class="icon-accent" />
+            </svg>
             <h3>Equipment Installation</h3>
             <p>Precision rigging, alignment and commissioning for heavy industrial assets and utilities.</p>
           </div>
@@ -195,7 +237,10 @@
             <img src="images/projects/Untitled%20(21).png" alt="Fire protection system placeholder" loading="lazy">
           </figure>
           <div class="service-body">
-            <div class="card-icon" aria-hidden="true">🔥</div>
+            <svg class="service-icon" viewBox="0 0 48 48" role="img" aria-label="Fire Protection icon">
+              <path d="M24 6c4 6 2 10-1 14s-5 8-1 12c4 4 11 2 13-4 2-7-5-9-3-17" class="icon-fill" />
+              <path d="M24 42c-7 0-12-5-12-12 0-6 4-10 8-14" class="icon-line" />
+            </svg>
             <h3>Fire Protection Systems</h3>
             <p>Turnkey suppression networks, alarm integration and ongoing inspection programs.</p>
           </div>
@@ -205,7 +250,11 @@
             <img src="images/projects/Untitled%20(33).png" alt="High-pressure vessels placeholder" loading="lazy">
           </figure>
           <div class="service-body">
-            <div class="card-icon" aria-hidden="true">🔩</div>
+            <svg class="service-icon" viewBox="0 0 48 48" role="img" aria-label="Pressure vessel icon">
+              <rect x="10" y="10" width="28" height="22" rx="6" class="icon-fill" />
+              <path d="M10 20h-4M38 22h4" class="icon-line" />
+              <path d="M24 10V6m0 26v10" class="icon-line" />
+            </svg>
             <h3>High-Pressure Vessels</h3>
             <p>Code-compliant fabrication and installation for liquid and gas processing under extreme conditions.</p>
           </div>
@@ -215,7 +264,12 @@
             <img src="images/projects/Untitled%20(45).png" alt="Industrial piping placeholder" loading="lazy">
           </figure>
           <div class="service-body">
-            <div class="card-icon" aria-hidden="true">🧰</div>
+            <svg class="service-icon" viewBox="0 0 48 48" role="img" aria-label="Industrial piping icon">
+              <path d="M6 18h12v-8h12v8h12" class="icon-line" />
+              <path d="M12 30h12v8h12v-8h6" class="icon-line" />
+              <circle cx="18" cy="30" r="4" class="icon-accent" />
+              <circle cx="30" cy="18" r="4" class="icon-accent" />
+            </svg>
             <h3>Mechanical &amp; Industrial Piping</h3>
             <p>Process-critical distribution networks engineered for uptime and simplified maintenance.</p>
           </div>
@@ -225,7 +279,10 @@
             <img src="images/projects/Untitled%20(57).png" alt="HVAC systems placeholder" loading="lazy">
           </figure>
           <div class="service-body">
-            <div class="card-icon" aria-hidden="true">❄️</div>
+            <svg class="service-icon" viewBox="0 0 48 48" role="img" aria-label="HVAC systems icon">
+              <circle cx="24" cy="24" r="8" class="icon-accent" />
+              <path d="M24 8v8M24 32v8M8 24h8M32 24h8M14 14l5 5M34 34l-5-5M34 14l-5 5M14 34l5-5" class="icon-line" />
+            </svg>
             <h3>HVAC Systems</h3>
             <p>Climate control and clean room delivery for mission-critical manufacturing environments.</p>
           </div>
@@ -235,7 +292,11 @@
             <img src="images/projects/Untitled%20(70).png" alt="Insulation and jacketing placeholder" loading="lazy">
           </figure>
           <div class="service-body">
-            <div class="card-icon" aria-hidden="true">🧵</div>
+            <svg class="service-icon" viewBox="0 0 48 48" role="img" aria-label="Insulation icon">
+              <path d="M12 16h24l4 8-4 8H12l-4-8z" class="icon-fill" />
+              <path d="M20 12v4M28 12v4M20 32v4M28 32v4" class="icon-line" />
+              <path d="M8 24h32" class="icon-line" />
+            </svg>
             <h3>Insulation &amp; Jacketing</h3>
             <p>Thermal and acoustic packages that safeguard performance and extend equipment life.</p>
           </div>
@@ -286,8 +347,11 @@
       </div>
       <div class="milestones-grid">
         <article class="milestone-card" data-animate>
+          <figure class="milestone-visual" aria-hidden="true">
+            <span class="milestone-badge">2024</span>
+            <div class="milestone-image" role="presentation"></div>
+          </figure>
           <header class="milestone-header">
-            <span class="milestone-year">2024</span>
             <p>Gigafactory build-outs across GA and OH</p>
           </header>
           <ul>
@@ -300,8 +364,11 @@
           </div>
         </article>
         <article class="milestone-card" data-animate>
+          <figure class="milestone-visual" aria-hidden="true">
+            <span class="milestone-badge">2023</span>
+            <div class="milestone-image" role="presentation"></div>
+          </figure>
           <header class="milestone-header">
-            <span class="milestone-year">2023</span>
             <p>High purity chemical processing expansions</p>
           </header>
           <ul>
@@ -314,8 +381,11 @@
           </div>
         </article>
         <article class="milestone-card" data-animate>
+          <figure class="milestone-visual" aria-hidden="true">
+            <span class="milestone-badge">2021–2022</span>
+            <div class="milestone-image" role="presentation"></div>
+          </figure>
           <header class="milestone-header">
-            <span class="milestone-year">2021–2022</span>
             <p>Utility resiliency and scale-out programs</p>
           </header>
           <ul>
@@ -328,8 +398,11 @@
           </div>
         </article>
         <article class="milestone-card" data-animate>
+          <figure class="milestone-visual" aria-hidden="true">
+            <span class="milestone-badge">2019–2020</span>
+            <div class="milestone-image" role="presentation"></div>
+          </figure>
           <header class="milestone-header">
-            <span class="milestone-year">2019–2020</span>
             <p>OEM ramp support for EV and electronics</p>
           </header>
           <ul>
@@ -342,8 +415,11 @@
           </div>
         </article>
         <article class="milestone-card" data-animate>
+          <figure class="milestone-visual" aria-hidden="true">
+            <span class="milestone-badge">2016–2018</span>
+            <div class="milestone-image" role="presentation"></div>
+          </figure>
           <header class="milestone-header">
-            <span class="milestone-year">2016–2018</span>
             <p>Foundational programs in the Southeast</p>
           </header>
           <ul>
@@ -393,11 +469,41 @@
     <div class="contact-grid">
       <div class="contact-info" data-animate>
         <ul class="contact-details">
-          <li><strong>Headquarters:</strong> 3483 Satellite Blvd Suite 100, Duluth, GA 30096</li>
-          <li><strong>Buford Facility:</strong> 4825 Bennett Rd, Buford, GA 30518 (opening 2025)</li>
-          <li><strong>Phone:</strong> <a href="tel:+17705570019">+1 (770) 557-0019</a></li>
-          <li><strong>Email:</strong> <a href="mailto:info@wellinsinc.com">info@wellinsinc.com</a></li>
-          <li><strong>Service Hours:</strong> Mon–Fri, 8:00am – 6:00pm ET</li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">📍</span>
+            <div>
+              <strong>Headquarters</strong>
+              <p>3483 Satellite Blvd Suite 100<br>Duluth, GA 30096</p>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">🏭</span>
+            <div>
+              <strong>Buford Facility</strong>
+              <p>4825 Bennett Rd<br>Buford, GA 30518 (opening 2025)</p>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">☎️</span>
+            <div>
+              <strong>Phone</strong>
+              <p><a href="tel:+17705570019">+1 (770) 557-0019</a></p>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:info@wellinsinc.com">info@wellinsinc.com</a></p>
+            </div>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">⏰</span>
+            <div>
+              <strong>Service Hours</strong>
+              <p>Mon–Fri, 8:00am – 6:00pm ET</p>
+            </div>
+          </li>
         </ul>
         <div class="contact-highlight">
           <p>Licensed across GA, TN, SC, AL, TX, and LA. Rapid-response installation teams ready to mobilize nationwide.</p>
