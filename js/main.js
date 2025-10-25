@@ -129,6 +129,72 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleScrollButton();
     window.addEventListener('scroll', toggleScrollButton, { passive: true });
   }
+
+  const spyLinks = document.querySelectorAll('.scroll-spy a[href^="#"]');
+  if (spyLinks.length) {
+    const trackedSections = Array.from(spyLinks)
+      .map(link => {
+        const targetId = link.getAttribute('href');
+        if (!targetId) {
+          return null;
+        }
+
+        const section = document.querySelector(targetId);
+        return section ? { link, section } : null;
+      })
+      .filter(Boolean);
+
+    const clearActive = () => {
+      spyLinks.forEach(link => {
+        link.classList.remove('is-active');
+        link.removeAttribute('aria-current');
+      });
+    };
+
+    const setActiveLink = (id) => {
+      const active = trackedSections.find(item => item.section.id === id);
+      if (!active) {
+        return;
+      }
+
+      clearActive();
+      active.link.classList.add('is-active');
+      active.link.setAttribute('aria-current', 'page');
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      const visibleEntries = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleEntries.length) {
+        setActiveLink(visibleEntries[0].target.id);
+      }
+    }, {
+      rootMargin: '-35% 0px -45% 0px',
+      threshold: [0.3, 0.6, 0.9]
+    });
+
+    trackedSections.forEach(({ section }) => observer.observe(section));
+
+    spyLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetId = link.getAttribute('href');
+        if (!targetId) {
+          return;
+        }
+
+        setActiveLink(targetId.replace('#', ''));
+      });
+    });
+
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash) {
+      setActiveLink(initialHash);
+    } else if (trackedSections[0]) {
+      setActiveLink(trackedSections[0].section.id);
+    }
+  }
 });
 
 
