@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" data-animate>
   <div class="container header-inner">
     <a href="#hero" class="logo" aria-label="Go to homepage">
       <img src="images/logos/Logo.png" alt="Wellins Inc. logo" />
@@ -34,6 +34,7 @@
 <main>
 <section class="hero" id="hero">
   <div class="hero-overlay">
+    <div class="luxury-glow" aria-hidden="true"></div>
     <div class="container hero-inner" data-animate>
       <div class="hero-content">
         <p class="hero-kicker">Trusted industrial partner since 2016</p>
@@ -171,68 +172,189 @@
 </section>
 
 
-  <section id="services" class="section bg-light" data-animate>
+  <section id="services" class="section bg-light">
     <div class="container">
-      <h2>Our Services</h2>
+      <div class="section-heading" data-animate>
+        <p class="section-kicker">End-to-End Expertise</p>
+        <h2>Our Services</h2>
+        <p class="section-subtitle">Each discipline is delivered by dedicated crews, precision equipment, and a relentless focus on safety and compliance.</p>
+      </div>
       <div class="services-grid">
-        <div class="card"><div class="card-icon">⚙️</div><h3>Equipment Installation</h3><p>Precision placement & alignment for safe, efficient industrial operations.</p></div>
-        <div class="card"><div class="card-icon">🔥</div><h3>Fire Protection Systems</h3><p>Complete installation and maintenance of fire-fighting pipelines and systems.</p></div>
-        <div class="card"><div class="card-icon">🔩</div><h3>High-Pressure Vessels</h3><p>Custom high-pressure liquid/gas pipelines built for reliability and compliance.</p></div>
-        <div class="card"><div class="card-icon">🧰</div><h3>Mechanical & Industrial Piping</h3><p>Fabrication & install of critical pipe systems in industrial environments.</p></div>
-        <div class="card"><div class="card-icon">❄️</div><h3>HVAC Systems</h3><p>Industrial heating, cooling, and clean room environments with optimal energy control.</p></div>
-        <div class="card"><div class="card-icon">🧵</div><h3>Insulation & Jacketing</h3><p>Thermal protection solutions to improve system efficiency and longevity.</p></div>
+        <article class="service-card" data-animate>
+          <figure class="service-media">
+            <img src="images/projects/Untitled%20(1).png" alt="Equipment installation placeholder" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <div class="card-icon" aria-hidden="true">⚙️</div>
+            <h3>Equipment Installation</h3>
+            <p>Precision rigging, alignment and commissioning for heavy industrial assets and utilities.</p>
+          </div>
+        </article>
+        <article class="service-card" data-animate>
+          <figure class="service-media">
+            <img src="images/projects/Untitled%20(21).png" alt="Fire protection system placeholder" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <div class="card-icon" aria-hidden="true">🔥</div>
+            <h3>Fire Protection Systems</h3>
+            <p>Turnkey suppression networks, alarm integration and ongoing inspection programs.</p>
+          </div>
+        </article>
+        <article class="service-card" data-animate>
+          <figure class="service-media">
+            <img src="images/projects/Untitled%20(33).png" alt="High-pressure vessels placeholder" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <div class="card-icon" aria-hidden="true">🔩</div>
+            <h3>High-Pressure Vessels</h3>
+            <p>Code-compliant fabrication and installation for liquid and gas processing under extreme conditions.</p>
+          </div>
+        </article>
+        <article class="service-card" data-animate>
+          <figure class="service-media">
+            <img src="images/projects/Untitled%20(45).png" alt="Industrial piping placeholder" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <div class="card-icon" aria-hidden="true">🧰</div>
+            <h3>Mechanical &amp; Industrial Piping</h3>
+            <p>Process-critical distribution networks engineered for uptime and simplified maintenance.</p>
+          </div>
+        </article>
+        <article class="service-card" data-animate>
+          <figure class="service-media">
+            <img src="images/projects/Untitled%20(57).png" alt="HVAC systems placeholder" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <div class="card-icon" aria-hidden="true">❄️</div>
+            <h3>HVAC Systems</h3>
+            <p>Climate control and clean room delivery for mission-critical manufacturing environments.</p>
+          </div>
+        </article>
+        <article class="service-card" data-animate>
+          <figure class="service-media">
+            <img src="images/projects/Untitled%20(70).png" alt="Insulation and jacketing placeholder" loading="lazy">
+          </figure>
+          <div class="service-body">
+            <div class="card-icon" aria-hidden="true">🧵</div>
+            <h3>Insulation &amp; Jacketing</h3>
+            <p>Thermal and acoustic packages that safeguard performance and extend equipment life.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="certifications" class="section" data-animate>
     <div class="container">
-      <h2>Certifications & Licenses</h2>
-      <ul class="capabilities-list">
-        <li>General Contractor Licenses: GA, TN, SC</li>
-        <li>Fire Protection Licenses: GA, TN, AL, TX, LA (as of 2024)</li>
-        <li>Process Pipe Welding Licenses</li>
-        <li>Clean Room, HVAC & Spool Fabrication Certifications</li>
-      </ul>
+      <div class="section-heading">
+        <p class="section-kicker">Credentials that Inspire Trust</p>
+        <h2>Certifications &amp; Licenses</h2>
+        <p class="section-subtitle">Regulatory compliance, third-party testing and manufacturer partnerships back every project we deliver.</p>
+      </div>
+      <div class="certifications-gallery">
+        <div class="cert-grid">
+          <figure class="cert-card"><img src="images/certificates/cert1.png" alt="Certification 1" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert2.png" alt="Certification 2" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert3.png" alt="Certification 3" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert4.png" alt="Certification 4" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert5.png" alt="Certification 5" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert6.png" alt="Certification 6" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert7.png" alt="Certification 7" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert8.png" alt="Certification 8" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert9.png" alt="Certification 9" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert10.png" alt="Certification 10" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert11.png" alt="Certification 11" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert12.png" alt="Certification 12" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert13.png" alt="Certification 13" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert14.png" alt="Certification 14" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert15.png" alt="Certification 15" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert16.png" alt="Certification 16" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert17.png" alt="Certification 17" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert18.png" alt="Certification 18" loading="lazy"></figure>
+          <figure class="cert-card"><img src="images/certificates/cert19.png" alt="Certification 19" loading="lazy"></figure>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="projects" class="section bg-light" data-animate>
     <div class="container">
-      <h2>Project Milestones</h2>
-      <div class="timeline project-timeline">
-        <div class="timeline-item"><div class="timeline-year">2024</div>
+      <div class="section-heading">
+        <p class="section-kicker">Highlighted Delivery</p>
+        <h2>Project Milestones</h2>
+        <p class="section-subtitle">A track record of mega-project execution with rolling programs that scale alongside our partners.</p>
+      </div>
+      <div class="milestones-grid">
+        <article class="milestone-card" data-animate>
+          <header class="milestone-header">
+            <span class="milestone-year">2024</span>
+            <p>Gigafactory build-outs across GA and OH</p>
+          </header>
           <ul>
-            <li>LGES-Honda JV (OH): Process & hot oil piping</li>
-            <li>SK Battery Plant 2 (GA): HVAC + Hot oil system</li>
-            <li>Hyundai Plant (GA): Utility area pipe systems</li>
+            <li>LGES-Honda JV (OH): Process &amp; hot oil piping</li>
+            <li>SK Battery Plant 2 (GA): HVAC &amp; hot oil system</li>
+            <li>Hyundai Metaplant (GA): Utility piping packages</li>
           </ul>
-        </div>
-        <div class="timeline-item"><div class="timeline-year">2023</div>
+          <div class="milestone-progress" role="presentation">
+            <span class="progress-bar" data-progress="92"></span>
+          </div>
+        </article>
+        <article class="milestone-card" data-animate>
+          <header class="milestone-header">
+            <span class="milestone-year">2023</span>
+            <p>High purity chemical processing expansions</p>
+          </header>
           <ul>
             <li>Dongwoo Fine-Chem (TX): Process piping</li>
-            <li>Soulbrain (IN): Process piping</li>
+            <li>Soulbrain (IN): Solvent handling upgrades</li>
+            <li>SK On Supplier Network: Tool hook-ups</li>
           </ul>
-        </div>
-        <div class="timeline-item"><div class="timeline-year">2021–2022</div>
+          <div class="milestone-progress" role="presentation">
+            <span class="progress-bar" data-progress="84"></span>
+          </div>
+        </article>
+        <article class="milestone-card" data-animate>
+          <header class="milestone-header">
+            <span class="milestone-year">2021–2022</span>
+            <p>Utility resiliency and scale-out programs</p>
+          </header>
           <ul>
-            <li>Enchem America (GA): Utility piping</li>
-            <li>Ultium Cells 2 (TN): Hot oil piping</li>
+            <li>Enchem America (GA): Utility piping campus</li>
+            <li>Ultium Cells 2 (TN): Hot oil distribution</li>
+            <li>Hanwha Qcells (GA): Clean room pipefitting</li>
           </ul>
-        </div>
-        <div class="timeline-item"><div class="timeline-year">2019–2020</div>
+          <div class="milestone-progress" role="presentation">
+            <span class="progress-bar" data-progress="76"></span>
+          </div>
+        </article>
+        <article class="milestone-card" data-animate>
+          <header class="milestone-header">
+            <span class="milestone-year">2019–2020</span>
+            <p>OEM ramp support for EV and electronics</p>
+          </header>
           <ul>
             <li>SK Battery Plant 1 (GA): CR/DR piping, HVAC</li>
-            <li>LG Chem (MI): NMP system</li>
-            <li>Samsung (SC): Duct system</li>
+            <li>LG Chem (MI): NMP process system</li>
+            <li>Samsung (SC): Duct and exhaust systems</li>
           </ul>
-        </div>
-        <div class="timeline-item"><div class="timeline-year">2016–2018</div>
+          <div class="milestone-progress" role="presentation">
+            <span class="progress-bar" data-progress="68"></span>
+          </div>
+        </article>
+        <article class="milestone-card" data-animate>
+          <header class="milestone-header">
+            <span class="milestone-year">2016–2018</span>
+            <p>Foundational programs in the Southeast</p>
+          </header>
           <ul>
-            <li>Hyosung (AL), Hyundai Powertech (GA)</li>
+            <li>Hyosung (AL) &amp; Hyundai Powertech (GA)</li>
             <li>Cooling water, clean room ducting, utility piping</li>
+            <li>Long-term maintenance partnerships launched</li>
           </ul>
-        </div>
+          <div class="milestone-progress" role="presentation">
+            <span class="progress-bar" data-progress="58"></span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -263,28 +385,43 @@
 
  <section id="contact" class="section bg-light" data-animate>
   <div class="container">
-    <h2>Contact Us</h2>
-    <ul class="contact-details">
-      <li><strong>Address:</strong> 3483 Satellite Blvd Suite 100, Duluth, GA 30096</li>
-      <li><strong>Phone:</strong> +1 (770) 557-0019</li>
-      <li><strong>Email:</strong> <a href="mailto:info@wellinsinc.com">info@wellinsinc.com</a></li>
-    </ul>
-
-    <form class="contact-form" action="#" method="post">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name" required>
+    <div class="section-heading">
+      <p class="section-kicker">Let's Build What's Next</p>
+      <h2>Contact Us</h2>
+      <p class="section-subtitle">Headquarters in Duluth with a new 4.3-acre manufacturing campus underway in Buford, GA.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info" data-animate>
+        <ul class="contact-details">
+          <li><strong>Headquarters:</strong> 3483 Satellite Blvd Suite 100, Duluth, GA 30096</li>
+          <li><strong>Buford Facility:</strong> 4825 Bennett Rd, Buford, GA 30518 (opening 2025)</li>
+          <li><strong>Phone:</strong> <a href="tel:+17705570019">+1 (770) 557-0019</a></li>
+          <li><strong>Email:</strong> <a href="mailto:info@wellinsinc.com">info@wellinsinc.com</a></li>
+          <li><strong>Service Hours:</strong> Mon–Fri, 8:00am – 6:00pm ET</li>
+        </ul>
+        <div class="contact-highlight">
+          <p>Licensed across GA, TN, SC, AL, TX, and LA. Rapid-response installation teams ready to mobilize nationwide.</p>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required>
+      <div class="contact-map" data-animate>
+        <iframe title="Wellins Inc. Duluth Office" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.149682792209!2d-84.11853602396974!3d33.96063317317882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5aefb7a58cb15%3A0x6af73d1d65eee5d4!2s3483%20Satellite%20Blvd%20%23100%2C%20Duluth%2C%20GA%2030096!5e0!3m2!1sen!2sus!4v1700000000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-      </div>
-      <button type="submit">Send Message</button>
-    </form>
+      <form class="contact-form" action="#" method="post" data-animate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </div>
 </section>
 
