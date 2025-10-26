@@ -32,17 +32,22 @@
 </header>
 
 <nav class="scroll-spy" aria-label="Section navigation">
-  <ul>
-    <li><a href="#hero">Intro</a></li>
-    <li><a href="#about-company">About</a></li>
-    <li><a href="#company-history">History</a></li>
-    <li><a href="#org-chart">Team</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#clients">Clients</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <button type="button" class="scroll-spy__toggle" aria-expanded="true" aria-controls="scroll-spy-list">
+    Sections
+  </button>
+  <div class="scroll-spy__panel" id="scroll-spy-list">
+    <ul>
+      <li><a href="#hero">Intro</a></li>
+      <li><a href="#about-company">About</a></li>
+      <li><a href="#company-history">History</a></li>
+      <li><a href="#org-chart">Team</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 <main>
@@ -365,16 +370,24 @@
             <span class="milestone-badge">2024</span>
             <div class="milestone-image" role="presentation"></div>
           </figure>
-          <header class="milestone-header">
-            <p>Gigafactory build-outs across GA and OH</p>
-          </header>
-          <ul>
-            <li>LGES-Honda JV (OH): Process &amp; hot oil piping</li>
-            <li>SK Battery Plant 2 (GA): HVAC &amp; hot oil system</li>
-            <li>Hyundai Metaplant (GA): Utility piping packages</li>
-          </ul>
-          <div class="milestone-progress" role="presentation">
-            <span class="progress-bar" data-progress="92"></span>
+          <div class="milestone-content">
+            <header class="milestone-header">
+              <span class="milestone-tag">Battery &amp; EV</span>
+              <h3>Gigafactory build-outs across GA and OH</h3>
+              <p class="milestone-copy">Coordinated multi-site program management for rapid battery facility deployment.</p>
+            </header>
+            <ul class="milestone-list">
+              <li>LGES-Honda JV (OH): Process &amp; hot oil piping</li>
+              <li>SK Battery Plant 2 (GA): HVAC &amp; hot oil system</li>
+              <li>Hyundai Metaplant (GA): Utility piping packages</li>
+            </ul>
+          </div>
+          <div class="milestone-progress" role="group" aria-label="Program completion">
+            <span class="milestone-progress-label">Completion</span>
+            <div class="milestone-progress-track" aria-hidden="true">
+              <span class="progress-bar" data-progress="92"></span>
+            </div>
+            <span class="progress-value" data-progress-label>0% complete</span>
           </div>
         </article>
         <article class="milestone-card" data-animate>
@@ -382,16 +395,24 @@
             <span class="milestone-badge">2023</span>
             <div class="milestone-image" role="presentation"></div>
           </figure>
-          <header class="milestone-header">
-            <p>High purity chemical processing expansions</p>
-          </header>
-          <ul>
-            <li>Dongwoo Fine-Chem (TX): Process piping</li>
-            <li>Soulbrain (IN): Solvent handling upgrades</li>
-            <li>SK On Supplier Network: Tool hook-ups</li>
-          </ul>
-          <div class="milestone-progress" role="presentation">
-            <span class="progress-bar" data-progress="84"></span>
+          <div class="milestone-content">
+            <header class="milestone-header">
+              <span class="milestone-tag">Specialty Chemicals</span>
+              <h3>High purity chemical processing expansions</h3>
+              <p class="milestone-copy">Precision upgrades that safeguard throughput and purity across national chem facilities.</p>
+            </header>
+            <ul class="milestone-list">
+              <li>Dongwoo Fine-Chem (TX): Process piping</li>
+              <li>Soulbrain (IN): Solvent handling upgrades</li>
+              <li>SK On Supplier Network: Tool hook-ups</li>
+            </ul>
+          </div>
+          <div class="milestone-progress" role="group" aria-label="Program completion">
+            <span class="milestone-progress-label">Completion</span>
+            <div class="milestone-progress-track" aria-hidden="true">
+              <span class="progress-bar" data-progress="84"></span>
+            </div>
+            <span class="progress-value" data-progress-label>0% complete</span>
           </div>
         </article>
         <article class="milestone-card" data-animate>
@@ -399,16 +420,24 @@
             <span class="milestone-badge">2021–2022</span>
             <div class="milestone-image" role="presentation"></div>
           </figure>
-          <header class="milestone-header">
-            <p>Utility resiliency and scale-out programs</p>
-          </header>
-          <ul>
-            <li>Enchem America (GA): Utility piping campus</li>
-            <li>Ultium Cells 2 (TN): Hot oil distribution</li>
-            <li>Hanwha Qcells (GA): Clean room pipefitting</li>
-          </ul>
-          <div class="milestone-progress" role="presentation">
-            <span class="progress-bar" data-progress="76"></span>
+          <div class="milestone-content">
+            <header class="milestone-header">
+              <span class="milestone-tag">Utilities &amp; Energy</span>
+              <h3>Utility resiliency and scale-out programs</h3>
+              <p class="milestone-copy">Campus-wide upgrades that expand redundancy and efficiency for critical utilities.</p>
+            </header>
+            <ul class="milestone-list">
+              <li>Enchem America (GA): Utility piping campus</li>
+              <li>Ultium Cells 2 (TN): Hot oil distribution</li>
+              <li>Hanwha Qcells (GA): Clean room pipefitting</li>
+            </ul>
+          </div>
+          <div class="milestone-progress" role="group" aria-label="Program completion">
+            <span class="milestone-progress-label">Completion</span>
+            <div class="milestone-progress-track" aria-hidden="true">
+              <span class="progress-bar" data-progress="76"></span>
+            </div>
+            <span class="progress-value" data-progress-label>0% complete</span>
           </div>
         </article>
         <article class="milestone-card" data-animate>
@@ -416,16 +445,24 @@
             <span class="milestone-badge">2019–2020</span>
             <div class="milestone-image" role="presentation"></div>
           </figure>
-          <header class="milestone-header">
-            <p>OEM ramp support for EV and electronics</p>
-          </header>
-          <ul>
-            <li>SK Battery Plant 1 (GA): CR/DR piping, HVAC</li>
-            <li>LG Chem (MI): NMP process system</li>
-            <li>Samsung (SC): Duct and exhaust systems</li>
-          </ul>
-          <div class="milestone-progress" role="presentation">
-            <span class="progress-bar" data-progress="68"></span>
+          <div class="milestone-content">
+            <header class="milestone-header">
+              <span class="milestone-tag">OEM Support</span>
+              <h3>OEM ramp support for EV and electronics</h3>
+              <p class="milestone-copy">Rapid-install task forces helping OEM partners scale and launch new production lines.</p>
+            </header>
+            <ul class="milestone-list">
+              <li>SK Battery Plant 1 (GA): CR/DR piping, HVAC</li>
+              <li>LG Chem (MI): NMP process system</li>
+              <li>Samsung (SC): Duct and exhaust systems</li>
+            </ul>
+          </div>
+          <div class="milestone-progress" role="group" aria-label="Program completion">
+            <span class="milestone-progress-label">Completion</span>
+            <div class="milestone-progress-track" aria-hidden="true">
+              <span class="progress-bar" data-progress="68"></span>
+            </div>
+            <span class="progress-value" data-progress-label>0% complete</span>
           </div>
         </article>
         <article class="milestone-card" data-animate>
@@ -433,16 +470,24 @@
             <span class="milestone-badge">2016–2018</span>
             <div class="milestone-image" role="presentation"></div>
           </figure>
-          <header class="milestone-header">
-            <p>Foundational programs in the Southeast</p>
-          </header>
-          <ul>
-            <li>Hyosung (AL) &amp; Hyundai Powertech (GA)</li>
-            <li>Cooling water, clean room ducting, utility piping</li>
-            <li>Long-term maintenance partnerships launched</li>
-          </ul>
-          <div class="milestone-progress" role="presentation">
-            <span class="progress-bar" data-progress="58"></span>
+          <div class="milestone-content">
+            <header class="milestone-header">
+              <span class="milestone-tag">Foundations</span>
+              <h3>Foundational programs in the Southeast</h3>
+              <p class="milestone-copy">Long-term partnerships built on consistent delivery for regional manufacturers.</p>
+            </header>
+            <ul class="milestone-list">
+              <li>Hyosung (AL) &amp; Hyundai Powertech (GA)</li>
+              <li>Cooling water, clean room ducting, utility piping</li>
+              <li>Long-term maintenance partnerships launched</li>
+            </ul>
+          </div>
+          <div class="milestone-progress" role="group" aria-label="Program completion">
+            <span class="milestone-progress-label">Completion</span>
+            <div class="milestone-progress-track" aria-hidden="true">
+              <span class="progress-bar" data-progress="58"></span>
+            </div>
+            <span class="progress-value" data-progress-label>0% complete</span>
           </div>
         </article>
       </div>
