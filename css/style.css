@@ -1005,6 +1005,47 @@ h2 {
   background-color: var(--color-bg);
 }
 
+/* Section background themes */
+.section.key-stats {
+  background: linear-gradient(135deg, rgba(0, 161, 224, 0.12), rgba(240, 199, 94, 0.12));
+}
+
+#about-company.section {
+  background: linear-gradient(135deg, rgba(20, 32, 51, 0.05), rgba(0, 161, 224, 0.08));
+}
+
+#company-history.section {
+  background: linear-gradient(120deg, rgba(15, 23, 39, 0.08), rgba(20, 32, 51, 0.02));
+}
+
+#project-milestones.section {
+  background: linear-gradient(135deg, rgba(240, 199, 94, 0.16), rgba(233, 100, 121, 0.12));
+}
+
+#org-chart.section {
+  background: linear-gradient(135deg, rgba(67, 170, 139, 0.16), rgba(0, 161, 224, 0.08));
+}
+
+#services.section {
+  background: linear-gradient(135deg, rgba(15, 23, 39, 0.04), rgba(0, 161, 224, 0.06));
+}
+
+#certifications.section {
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.22), rgba(244, 246, 250, 0.6));
+}
+
+#projects.section {
+  background: linear-gradient(135deg, rgba(20, 32, 51, 0.12), rgba(0, 161, 224, 0.04));
+}
+
+#clients.section {
+  background: linear-gradient(135deg, rgba(240, 199, 94, 0.16), rgba(67, 170, 139, 0.12));
+}
+
+#contact.section {
+  background: linear-gradient(135deg, rgba(0, 161, 224, 0.18), rgba(20, 32, 51, 0.05));
+}
+
 /* Header */
 .site-header {
   position: sticky;
