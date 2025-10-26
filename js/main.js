@@ -21,8 +21,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const counters = document.querySelectorAll('[data-counter]');
   const progressBars = document.querySelectorAll('.progress-bar');
   const scrollTopButton = document.querySelector('.scroll-top');
+  const scrollSpy = document.querySelector('.scroll-spy');
   const hasIntersectionObserver = 'IntersectionObserver' in window;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let setScrollSpyCollapsed;
+
+  if (scrollSpy) {
+    const scrollSpyToggle = scrollSpy.querySelector('.scroll-spy__toggle');
+    const scrollSpyPanel = scrollSpy.querySelector('.scroll-spy__panel');
+
+    if (scrollSpyToggle && scrollSpyPanel) {
+      setScrollSpyCollapsed = (collapsed) => {
+        scrollSpy.classList.toggle('is-collapsed', collapsed);
+        scrollSpyToggle.setAttribute('aria-expanded', (!collapsed).toString());
+        scrollSpyPanel.setAttribute('aria-hidden', collapsed ? 'true' : 'false');
+      };
+
+      scrollSpyToggle.addEventListener('click', () => {
+        const willCollapse = !scrollSpy.classList.contains('is-collapsed');
+        if (setScrollSpyCollapsed) {
+          setScrollSpyCollapsed(willCollapse);
+        }
+      });
+
+      setScrollSpyCollapsed(scrollSpy.classList.contains('is-collapsed'));
+    }
+  }
 
   const activateCounter = (element) => {
     const targetValue = parseFloat(element.dataset.counter);
@@ -55,6 +80,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = parseFloat(bar.dataset.progress ?? '0');
     const clamped = Number.isFinite(target) ? Math.min(Math.max(target, 0), 100) : 0;
     bar.style.width = `${clamped}%`;
+
+    const container = bar.closest('.milestone-progress');
+    if (container) {
+      const formatted = Number.isFinite(target) && !Number.isInteger(target)
+        ? clamped.toFixed(1)
+        : Math.round(clamped).toString();
+
+      const label = container.querySelector('[data-progress-label]');
+      if (label) {
+        label.textContent = `${formatted}% complete`;
+      }
+
+      const ariaLabel = container.getAttribute('aria-label');
+      if (ariaLabel) {
+        const baseLabel = ariaLabel.split(':')[0] ?? ariaLabel;
+        container.setAttribute('aria-label', `${baseLabel}: ${formatted} percent complete`);
+      }
+    }
   };
 
   if (prefersReducedMotion) {
@@ -185,6 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setActiveLink(targetId.replace('#', ''));
+
+        if (typeof setScrollSpyCollapsed === 'function') {
+          setScrollSpyCollapsed(true);
+        }
       });
     });
 
