@@ -246,45 +246,74 @@ img {
 }
 
 
+
 .timeline {
+  --timeline-gap: clamp(2.5rem, 6vw, 4.5rem);
   position: relative;
   list-style: none;
-  padding: 3.75rem 0 0;
   margin: 0;
-  display: flex;
-  gap: 2.25rem;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: nowrap;
+  padding: 1.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(2.5rem, 8vw, 6rem);
+  row-gap: var(--timeline-gap);
+  max-width: 980px;
+  margin-inline: auto;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  top: 1rem;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, rgba(0, 161, 224, 0.35) 0%, rgba(0, 161, 224, 0.85) 60%, rgba(228, 57, 70, 0.9) 100%);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background: linear-gradient(180deg, rgba(0, 161, 224, 0.35) 0%, rgba(0, 161, 224, 0.85) 60%, rgba(228, 57, 70, 0.9) 100%);
   border-radius: 999px;
 }
 
 .timeline-item {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.5rem;
-  padding-top: 3rem;
-  min-width: 160px;
-  flex: 1 1 0;
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+  padding-top: 0.75rem;
 }
 
-.timeline-item::before {
+.timeline-item:nth-child(odd) {
+  grid-column: 1;
+  justify-items: end;
+  text-align: right;
+  padding-right: clamp(1rem, 3vw, 2.75rem);
+}
+
+.timeline-item:nth-child(even) {
+  grid-column: 2;
+  justify-items: start;
+  text-align: left;
+  padding-left: clamp(1rem, 3vw, 2.75rem);
+}
+
+.timeline-item::after {
   content: '';
   position: absolute;
-  top: 1rem;
+  top: calc(0.75rem + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% + var(--timeline-gap) - 14px);
+  background: linear-gradient(180deg, rgba(0, 161, 224, 0.45), rgba(228, 57, 70, 0.85));
+  z-index: 1;
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0.75rem;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 20px;
@@ -296,37 +325,26 @@ img {
   z-index: 2;
 }
 
-.timeline-item::after {
-  content: '';
-  position: absolute;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: calc(100% - 3rem);
-  background: linear-gradient(180deg, rgba(0, 161, 224, 0.45), rgba(228, 57, 70, 0.85));
-  z-index: 1;
-  pointer-events: none;
-}
-
 .timeline-card {
   position: relative;
   background: var(--color-white);
-  padding: 1.8rem 2rem;
-  border-radius: 16px;
+  padding: 2rem clamp(1.5rem, 3vw, 2.35rem);
+  border-radius: 20px;
   box-shadow: 0 24px 60px rgba(15, 23, 39, 0.08);
-  max-width: 340px;
-  z-index: 3;
+  max-width: 360px;
+  width: min(100%, 360px);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  align-items: center;
-  text-align: inherit;
+  gap: 0.85rem;
+  z-index: 3;
 }
 
-.timeline-item:nth-child(odd) .timeline-card,
+.timeline-item:nth-child(odd) .timeline-card {
+  text-align: right;
+}
+
 .timeline-item:nth-child(even) .timeline-card {
-  text-align: inherit;
+  text-align: left;
 }
 
 .timeline-year {
@@ -353,46 +371,144 @@ img {
   .history-grid {
     grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 768px) {
   .timeline {
-    flex-direction: column;
-    gap: 2.5rem;
-    padding-top: 0;
+    grid-template-columns: 1fr;
+    padding: 0;
+    padding-left: 2.5rem;
+    max-width: 100%;
   }
 
   .timeline::before {
-    top: 0;
-    bottom: 0;
-    left: 18px;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 161, 224, 0.35) 0%, rgba(0, 161, 224, 0.85) 60%, rgba(228, 57, 70, 0.9) 100%);
+    left: 1.25rem;
+    transform: translateX(0);
   }
 
-  .timeline-item {
-    align-items: flex-start;
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    grid-column: 1;
+    justify-items: start;
     text-align: left;
-    gap: 1.5rem;
-    padding: 0 0 0 3rem;
-  }
-
-  .timeline-item::before {
-    top: 0;
-    left: 18px;
-    transform: translate(-50%, 0);
+    padding: 0 0 0 0.5rem;
   }
 
   .timeline-item::after {
-    display: none;
+    left: 1.25rem;
+    transform: translateX(0);
   }
 
-  .timeline-card,
-  .timeline-item:nth-child(odd) .timeline-card,
-  .timeline-item:nth-child(even) .timeline-card {
-    text-align: left;
-    max-width: 100%;
+  .timeline-marker {
+    left: 1.25rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-card {
     width: 100%;
-    align-items: flex-start;
+    max-width: 100%;
+  }
+}
+
+.project-milestones {
+  background: linear-gradient(180deg, rgba(20, 32, 51, 0.03) 0%, rgba(20, 32, 51, 0) 60%), var(--color-white);
+  padding: 6rem 0;
+}
+
+.milestones-header {
+  text-align: center;
+  margin: 0 auto 3rem;
+  max-width: 720px;
+}
+
+.milestone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.milestone-card {
+  background: var(--color-white);
+  border-radius: 18px;
+  padding: clamp(1.75rem, 3vw, 2.4rem);
+  box-shadow: 0 22px 55px rgba(15, 23, 39, 0.08);
+  border: 1px solid rgba(20, 32, 51, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.milestone-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 161, 224, 0.12), rgba(228, 57, 70, 0.08));
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+  z-index: 0;
+}
+
+.milestone-card:hover::after {
+  opacity: 1;
+}
+
+.milestone-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.milestone-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.milestone-year {
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  background: rgba(0, 161, 224, 0.12);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+}
+
+.milestone-card h3 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.milestone-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  color: rgba(47, 55, 71, 0.82);
+}
+
+.milestone-list li {
+  line-height: 1.55;
+}
+
+.milestone-list strong {
+  color: var(--color-primary);
+}
+
+@media (max-width: 992px) {
+  .milestone-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .milestone-grid {
+    grid-template-columns: 1fr;
   }
 }
 
