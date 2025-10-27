@@ -703,203 +703,40 @@ img {
   color: #555;
 }
 
-.org-modern .org-tree {
+.org-modern {
+  background: radial-gradient(circle at 20% 20%, rgba(19, 41, 74, 0.08), transparent 65%), #020b1a;
+}
+
+.org-chart-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
 }
 
-.org-level {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  position: relative;
+.org-chart-figure {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(8, 16, 32, 0.35);
+  background: radial-gradient(circle at top, rgba(22, 44, 86, 0.35), rgba(5, 12, 28, 0.9));
+}
+
+.org-chart-figure picture,
+.org-chart-figure img {
+  display: block;
   width: 100%;
+  height: auto;
 }
 
-.org-level--root {
-  justify-content: center;
-}
-
-.org-level--root .org-node::after {
-  content: '';
-  position: absolute;
-  bottom: -32px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 32px;
-  background: linear-gradient(180deg, var(--color-primary), rgba(20, 32, 51, 0));
-  pointer-events: none;
-}
-
-.org-level--departments {
-  flex-wrap: wrap;
-  padding: 0 2rem;
-}
-
-.org-level--departments::before {
-  content: '';
-  position: absolute;
-  top: -18px;
-  left: 12%;
-  right: 12%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(20, 32, 51, 0.35), transparent);
-  pointer-events: none;
-}
-
-.org-node {
-  position: relative;
-  background: #f8f9fb;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 0.85rem 1.35rem;
-  font-weight: 600;
-  min-width: 160px;
-  text-align: center;
-  box-shadow: 0 12px 28px rgba(15, 23, 39, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.org-node:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 38px rgba(15, 23, 39, 0.12);
-}
-
-.org-node::before {
-  content: '';
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 18px;
-  background: rgba(20, 32, 51, 0.25);
-  opacity: 0;
-}
-
-.org-level--departments .org-node::before {
-  opacity: 1;
-}
-
-.org-node.ceo {
-  background: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
-  min-width: 200px;
-}
-
-.org-node.red {
-  background: #f94144;
-  color: white;
-  border-color: #f94144;
-}
-
-.org-node.green {
-  background: #43aa8b;
-  color: white;
-  border-color: #43aa8b;
-}
-
-.org-node.purple {
-  background: #7E57C2;
-  color: white;
-  border-color: #7E57C2;
-}
-
-.org-lattice {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  position: relative;
-}
-
-.org-lattice::before {
-  content: '';
-  position: absolute;
-  top: -18px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(20, 32, 51, 0.35), transparent);
-  pointer-events: none;
-}
-
-.org-column {
-  position: relative;
-  padding-top: 2.5rem;
-}
-
-.org-column::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 2.5rem;
-  background: rgba(20, 32, 51, 0.25);
-  pointer-events: none;
-}
-
-.org-column-title {
-  text-align: center;
-  font-size: 1rem;
-  margin-bottom: 1.25rem;
-  color: rgba(20, 32, 51, 0.7);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.org-branch {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  position: relative;
-  padding: 1.5rem 1rem;
-  border-radius: 12px;
-  background: rgba(244, 246, 250, 0.9);
-  border: 1px dashed rgba(20, 32, 51, 0.12);
-}
-
-.org-branch::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(20, 32, 51, 0.1), rgba(20, 32, 51, 0));
-  pointer-events: none;
-  z-index: 0;
-}
-
-.org-branch .org-node {
-  min-width: auto;
-  box-shadow: none;
-  border-width: 1px;
-  position: relative;
-  z-index: 1;
-}
-
-.org-branch .org-node::before {
-  display: none;
-}
-
-/* Responsive Org Chart */
 @media (max-width: 768px) {
-  .org-node {
-    min-width: 140px;
-    font-size: 0.9rem;
+  .org-chart-container {
+    gap: 2rem;
   }
 
-  .org-column-title {
-    font-size: 0.9rem;
+  .org-chart-figure {
+    border-radius: 20px;
   }
 }
 
