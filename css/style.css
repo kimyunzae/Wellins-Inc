@@ -568,18 +568,22 @@ img {
   aspect-ratio: 4 / 3;
   min-height: 220px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(0, 161, 224, 0.08), rgba(20, 32, 51, 0.06));
+  background: linear-gradient(135deg, rgba(0, 161, 224, 0.08), rgba(20, 32, 51, 0.06)), var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projects__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.6s ease;
+  padding: clamp(0.5rem, 1.2vw, 0.85rem);
 }
 
 .projects__card:hover .projects__media img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .projects__card[data-animate] {
@@ -1915,7 +1919,7 @@ textarea:focus {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(2.5rem, 6vw, 4.5rem);
-  align-items: center;
+  align-items: stretch;
 }
 
 .about-content {
@@ -1928,6 +1932,9 @@ textarea:focus {
   box-shadow: 0 22px 60px rgba(15, 23, 39, 0.12);
   padding: clamp(2.25rem, 4vw, 3rem);
   backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 .about-eyebrow {
@@ -1953,7 +1960,7 @@ textarea:focus {
 
 .about-quote {
   position: relative;
-  margin: clamp(1.75rem, 4vw, 2.5rem) 0;
+  margin: 0;
   padding: clamp(1.15rem, 3vw, 1.65rem) clamp(1.35rem, 3vw, 2rem);
   border-radius: 18px;
   background: linear-gradient(120deg, rgba(230, 57, 70, 0.1), rgba(0, 161, 224, 0.1));
@@ -1973,10 +1980,13 @@ textarea:focus {
 
 .about-highlights {
   list-style: none;
-  margin: clamp(2rem, 4vw, 2.75rem) 0 clamp(2rem, 5vw, 3rem);
+  margin: 0;
   padding: 0;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: clamp(1.25rem, 3vw, 1.9rem);
+  flex-grow: 1;
+  justify-content: space-between;
 }
 
 .about-highlights li {
@@ -2018,6 +2028,7 @@ textarea:focus {
   gap: 0.45rem;
   padding-inline: clamp(1.75rem, 4vw, 2.5rem);
   box-shadow: 0 12px 25px rgba(0, 161, 224, 0.25);
+  margin-top: clamp(1.5rem, 3vw, 2rem);
 }
 
 .about-cta::after {
@@ -2120,6 +2131,7 @@ textarea:focus {
 
   .about-content {
     padding: clamp(1.75rem, 5vw, 2.5rem);
+    gap: clamp(1.1rem, 4vw, 1.5rem);
   }
 
   .about-visual {
@@ -2130,6 +2142,11 @@ textarea:focus {
   .about-visual__badge {
     left: clamp(1.35rem, 5vw, 2rem);
     bottom: clamp(1.35rem, 5vw, 2rem);
+  }
+
+  .about-highlights {
+    flex-grow: 0;
+    justify-content: initial;
   }
 }
 
