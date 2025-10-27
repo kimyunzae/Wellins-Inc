@@ -326,7 +326,7 @@ img {
 
 .timeline {
   --timeline-axis: clamp(1.2rem, 2.4vw, 1.8rem);
-  --timeline-gap-y: clamp(1.4rem, 3vw, 2.1rem);
+  --timeline-gap-y: clamp(1.4rem, 3vw, 2.1rem);  
   --timeline-card-offset: clamp(2.4rem, 5.5vw, 3.4rem);
   --timeline-dot-offset: clamp(1.15rem, 2.5vw, 1.55rem);
   position: relative;
@@ -1898,8 +1898,6 @@ textarea:focus {
 .about-company {
   position: relative;
   padding: clamp(4.5rem, 8vw, 6.5rem) 0;
-  background: linear-gradient(135deg, rgba(3, 24, 61, 0.04) 0%, rgba(0, 161, 224, 0.08) 55%, rgba(255, 255, 255, 0) 100%),
-    var(--color-white);
   overflow: hidden;
 }
 
@@ -1907,7 +1905,7 @@ textarea:focus {
   content: '';
   position: absolute;
   inset: -40% 45% 35% -30%;
-  background: radial-gradient(circle at 30% 40%, rgba(0, 161, 224, 0.16) 0%, rgba(0, 161, 224, 0) 62%);
+  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.16) 0%, rgba(182, 234, 255, 0) 62%);
   transform: rotate(-12deg);
   pointer-events: none;
 }
@@ -2046,7 +2044,7 @@ textarea:focus {
 .about-visual img {
   position: absolute;
   inset: 0;
-  width: 100%;
+  width: 400;
   height: 100%;
   object-fit: cover;
   filter: saturate(1.05);
