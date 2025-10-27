@@ -1771,6 +1771,24 @@ textarea:focus {
   gap: clamp(1.25rem, 3vw, 1.75rem);
 }
 
+.about-aside {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: clamp(1.75rem, 4vw, 2.35rem);
+  align-content: start;
+}
+
+.about-strengths {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 82, 156, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 22px 60px rgba(15, 23, 39, 0.12);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+}
+
 .about-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -1819,8 +1837,8 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   gap: clamp(1.25rem, 3vw, 1.9rem);
-  flex-grow: 1;
-  justify-content: space-between;
+  flex-grow: initial;
+  justify-content: initial;
 }
 
 .about-highlights li {
@@ -1968,8 +1986,13 @@ textarea:focus {
     gap: clamp(1.1rem, 4vw, 1.5rem);
   }
 
-  .about-visual {
+  .about-aside {
     order: -1;
+    grid-template-rows: minmax(0, clamp(280px, 55vw, 360px)) auto;
+    gap: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .about-visual {
     min-height: clamp(280px, 55vw, 360px);
   }
 
@@ -1978,9 +2001,8 @@ textarea:focus {
     bottom: clamp(1.35rem, 5vw, 2rem);
   }
 
-  .about-highlights {
-    flex-grow: 0;
-    justify-content: initial;
+  .about-strengths {
+    padding: clamp(1.4rem, 5vw, 2rem);
   }
 }
 
