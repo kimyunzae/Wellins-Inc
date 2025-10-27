@@ -717,10 +717,9 @@ img {
 .org-chart-figure {
   width: min(100%, 1080px);
   margin: 0 auto;
-  border-radius: 28px;
+
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(8, 16, 32, 0.35);
-  background: radial-gradient(circle at top, rgba(22, 44, 86, 0.35), rgba(5, 12, 28, 0.9));
+
 }
 
 .org-chart-figure picture,
@@ -735,9 +734,7 @@ img {
     gap: 2rem;
   }
 
-  .org-chart-figure {
-    border-radius: 20px;
-  }
+ 
 }
 
 
