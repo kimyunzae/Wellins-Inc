@@ -326,13 +326,13 @@ img {
 
 .timeline {
   --timeline-axis: clamp(1.2rem, 2.4vw, 1.8rem);
-  --timeline-gap-y: clamp(1.4rem, 3vw, 2.1rem);  
+  --timeline-gap-y: clamp(1.4rem, 3vw, 2.1rem);
   --timeline-card-offset: clamp(2.4rem, 5.5vw, 3.4rem);
   --timeline-dot-offset: clamp(1.15rem, 2.5vw, 1.55rem);
   position: relative;
   list-style: none;
   margin: 0;
-  padding: clamp(1.4rem, 3vw, 2rem) 0 clamp(1.4rem, 3vw, 2rem) calc(var(--timeline-axis) + var(--timeline-card-offset));
+  padding: clamp(1.4rem, 3vw, 2rem) 0;
   display: grid;
   row-gap: var(--timeline-gap-y);
   width: 100%;
@@ -344,8 +344,8 @@ img {
   top: clamp(1rem, 3vw, 1.6rem);
   bottom: clamp(1rem, 3vw, 1.6rem);
   left: var(--timeline-axis);
+  transform: translateX(-50%);
   width: 3px;
-  transform: none;
   background: linear-gradient(
     180deg,
     rgba(16, 82, 156, 0.7) 0%,
@@ -358,7 +358,7 @@ img {
 .timeline-item {
   position: relative;
   display: block;
-  padding-left: 0;
+  padding-left: calc(var(--timeline-axis) + var(--timeline-card-offset));
 }
 
 .timeline-item::before {
@@ -402,7 +402,7 @@ img {
   border: 1px solid rgba(182, 198, 222, 0.6);
   box-shadow: 0 16px 38px rgba(15, 23, 39, 0.14);
   padding: clamp(1rem, 2.2vw, 1.45rem) clamp(1.2rem, 2.8vw, 1.8rem);
-  margin-left: var(--timeline-card-offset);
+  margin-left: 0;
   text-align: left;
 }
 
@@ -467,12 +467,15 @@ img {
     --timeline-card-offset: clamp(1.4rem, 7vw, 2.1rem);
     --timeline-dot-offset: clamp(1rem, 4vw, 1.35rem);
     row-gap: clamp(1.25rem, 5vw, 1.85rem);
+  }
+
+  .timeline-item {
     padding-left: calc(var(--timeline-axis) + var(--timeline-card-offset));
   }
 
   .timeline-card {
     width: 100%;
-    margin-left: var(--timeline-card-offset);
+    margin-left: 0;
     padding: clamp(0.95rem, 4vw, 1.35rem) clamp(1rem, 5vw, 1.5rem);
   }
 }
