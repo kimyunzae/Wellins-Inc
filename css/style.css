@@ -72,31 +72,34 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.3rem;
   margin: 0;
   padding: 0;
 }
 
 .scroll-spy a {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(20, 32, 51, 0.6);
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  transition: color var(--transition-speed), background var(--transition-speed), box-shadow var(--transition-speed);
+  color: rgba(20, 32, 51, 0.56);
+  padding: 0.45rem 0.5rem 0.45rem 0.85rem;
+  border-left: 2px solid transparent;
+  border-radius: 0 999px 999px 0;
+  transition: color var(--transition-speed), border-color var(--transition-speed), background var(--transition-speed);
 }
 
 .scroll-spy a:hover {
   color: var(--color-primary);
+  background: rgba(20, 32, 51, 0.04);
 }
 
 .scroll-spy a.is-active,
 .scroll-spy a[aria-current="page"] {
-  background: var(--color-accent);
-  color: var(--color-white);
-  box-shadow: 0 10px 22px rgba(0, 161, 224, 0.28);
+  color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  background: rgba(0, 161, 224, 0.12);
+  font-weight: 600;
 }
 
 .scroll-spy a:focus-visible {
