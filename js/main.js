@@ -22,30 +22,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressBars = document.querySelectorAll('.progress-bar');
   const scrollTopButton = document.querySelector('.scroll-top');
   const scrollSpy = document.querySelector('.scroll-spy');
+  const heroSection = document.querySelector('#hero');
   const hasIntersectionObserver = 'IntersectionObserver' in window;
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  let setScrollSpyCollapsed;
-
   if (scrollSpy) {
-    const scrollSpyToggle = scrollSpy.querySelector('.scroll-spy__toggle');
-    const scrollSpyPanel = scrollSpy.querySelector('.scroll-spy__panel');
+    if (!heroSection) {
+      scrollSpy.classList.remove('is-hidden');
+    } else if (hasIntersectionObserver) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const shouldHide = entry.isIntersecting && entry.intersectionRatio > 0.2;
+          scrollSpy.classList.toggle('is-hidden', shouldHide);
+        });
+      }, { threshold: [0, 0.2, 0.4, 0.8] });
 
-    if (scrollSpyToggle && scrollSpyPanel) {
-      setScrollSpyCollapsed = (collapsed) => {
-        scrollSpy.classList.toggle('is-collapsed', collapsed);
-        scrollSpyToggle.setAttribute('aria-expanded', (!collapsed).toString());
-        scrollSpyPanel.setAttribute('aria-hidden', collapsed ? 'true' : 'false');
+      heroObserver.observe(heroSection);
+    } else {
+      const toggleSpyVisibility = () => {
+        if (!heroSection) {
+          scrollSpy.classList.remove('is-hidden');
+          return;
+        }
+
+        const rect = heroSection.getBoundingClientRect();
+        const heroVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        scrollSpy.classList.toggle('is-hidden', heroVisible);
       };
 
-      scrollSpyToggle.addEventListener('click', () => {
-        const willCollapse = !scrollSpy.classList.contains('is-collapsed');
-        if (setScrollSpyCollapsed) {
-          setScrollSpyCollapsed(willCollapse);
-        }
-      });
-
-      setScrollSpyCollapsed(scrollSpy.classList.contains('is-collapsed'));
+      toggleSpyVisibility();
+      window.addEventListener('scroll', toggleSpyVisibility, { passive: true });
+      window.addEventListener('resize', toggleSpyVisibility);
     }
   }
 
@@ -191,6 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
       spyLinks.forEach(link => {
         link.classList.remove('is-active');
         link.removeAttribute('aria-current');
+        const parentItem = link.closest('.scroll-spy__item');
+        if (parentItem) {
+          parentItem.classList.remove('is-active');
+        }
       });
     };
 
@@ -203,6 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
       clearActive();
       active.link.classList.add('is-active');
       active.link.setAttribute('aria-current', 'page');
+      const parentItem = active.link.closest('.scroll-spy__item');
+      if (parentItem) {
+        parentItem.classList.add('is-active');
+      }
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -229,9 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setActiveLink(targetId.replace('#', ''));
 
-        if (typeof setScrollSpyCollapsed === 'function') {
-          setScrollSpyCollapsed(true);
-        }
       });
     });
 
